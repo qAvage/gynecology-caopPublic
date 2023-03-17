@@ -1,0 +1,288 @@
+//------------------------------------------------------------------------------
+// Popup
+//------------------------------------------------------------------------------
+
+// Common popup
+
+.popup {
+  padding: 0 36px;
+  position: fixed;
+
+  &, .overlay {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  .overlay {
+    position: absolute;
+  }
+
+  p, h2, h3, h4 {
+    text-align: center;
+  }
+
+  .icon-close {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    stroke: $color-gray;
+    cursor: pointer;
+  }
+
+  .inner {
+    max-width: 780px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: $color-white;
+    border-radius: 16px;
+    box-shadow: $shadow-primary;
+  }
+
+  @include respond(medium-sm) {
+
+    h2 {
+      font-size: 20px;
+      font-weight: 600;
+    }
+  }
+
+  @include respond(small) {
+    padding: 0 18px;
+  }
+}
+
+
+
+// Form-popup
+
+#form-popup {
+  z-index: 101;
+
+  h2 {
+    padding: 0 22px 16px;
+    text-align: center;
+    line-height: 30px;
+  }
+
+  h3 {
+    color: $color-gray;
+    line-height: 22px;
+  }
+
+  .overlay {
+    background-color: $color-blue;
+    opacity: 0.5;
+  }
+
+  .programs {
+    padding: 16px 36px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+  }
+  
+  .inner {
+    padding: 50px 0 60px 0;
+    z-index: 102;
+
+    .form {
+      padding: 40px 22px 0;
+      max-width: 650px;
+
+      &, form {
+        margin: 0 auto;
+      }
+
+      .fields {
+        margin: 0 0 30px;
+      }
+
+      .agreement {
+        flex-direction: column;
+
+        .btn {
+          width: 100%;
+          max-width: 280px;
+        }
+      }
+    }
+  }
+
+  @include respond(medium-sm) {
+
+    h3 {
+      font-size: 16px;
+    }
+
+    .inner {
+      
+      .form {
+
+        .fields {
+          
+          span {
+            left: 0;
+            right: 0;
+          }
+        }
+      }
+    }
+  }
+
+  @include respond(small-lg) {
+
+    .programs {
+      justify-content: flex-start;
+      flex-wrap: nowrap;
+      overflow-x: scroll;
+      white-space: nowrap;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+
+    .inner {
+
+      .form {
+        max-width: 400px;
+
+        .fields {
+          flex-direction: column;
+          gap: 25px;
+        }
+
+        .agreement {
+
+          .ui-checkbox {
+            max-width: 280px;
+          }
+        }
+      }
+    }
+  }
+
+  @include respond(small) {
+
+    h3 {
+      margin: 0 auto;
+      max-width: 230px;
+    }
+    
+    .inner {
+      padding: 60px 0 50px 0;
+
+      .form {
+
+        .agreement {
+          padding: 0;
+        }
+      }
+    }
+  }
+
+  @include respond(small-sm-md) {
+    
+    .inner {
+      
+      .form {
+
+        .fields {
+          
+          span {
+            left: -20px;
+            right: -20px;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+// Success-popup
+
+#success-popup {
+  z-index: 99;
+
+  h4 {
+    margin: 0 auto;
+    padding-top: 28px;
+    max-width: 420px;
+  }
+
+  .inner {
+    padding: 50px 100px 60px;
+    z-index: 100;
+  }
+
+  @include respond(medium) {
+
+    .inner {
+      padding: 60px 50px 50px;
+    }
+  }
+
+  @include respond(medium-sm) {
+
+    h2 {
+      margin: 0 auto;
+      max-width: 450px;
+      line-height: 28px;
+    }
+
+    h4 {
+      padding-top: 16px;
+      font-size: 14px;
+      font-weight: 400;
+    }
+
+    .inner {
+      padding: 60px 30px 50px;
+    }
+  }
+
+  @include respond(small) {
+
+    .inner {
+      padding: 60px 16px 50px;
+    }
+  }
+}
+
+
+
+// Animation
+
+.fade-enter-active {
+  transition: all 0.25s ease-in-out;
+}
+
+.fade-leave-active {
+  transition: all 0.20s ease-in-out;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+
+  &#success-popup {
+    transform: scale(0.2);
+  }
+}
+
+
+
+

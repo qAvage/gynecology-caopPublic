@@ -1,0 +1,16 @@
+//------------------------------------------------------------------------------
+// UITitleIcon
+//------------------------------------------------------------------------------
+
+
+
+.ui-title-icon {
+  display: inline-block;
+  padding: 8px 14px;
+  color: $color-blue;
+  background-color: $color-light-bg;
+  border-radius: 50px;
+  user-select: none;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-tap-highlight-color: transparent;
+}

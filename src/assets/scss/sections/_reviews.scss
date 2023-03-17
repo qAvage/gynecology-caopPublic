@@ -1,0 +1,163 @@
+//------------------------------------------------------------------------------
+// Reviews
+//------------------------------------------------------------------------------
+
+
+
+#reviews {
+  overflow: hidden;
+
+  .title {
+    max-width: 500px;
+
+    h2 {
+      padding: 15px 0;
+    }
+  }
+
+// Slider
+
+
+
+  .slider {
+    position: relative;
+    padding-top: 40px;
+  }
+
+  .bg-blur {
+    opacity: 0.13;
+    filter: blur(50px);
+
+    &:first-of-type {
+      top: -90px;
+      right: -150px;
+    }
+
+    &:last-of-type {
+      top: -70px;
+      left: -100px;
+    }
+  }
+
+  .flickity-page-dots {
+
+    .dot {
+      background: $color-khaki;
+      opacity: 1;
+    }
+
+    .is-selected {
+      background: $color-light-blue;
+    }
+  }
+
+  .buttonSlider {
+    display: flex;
+    position: absolute;
+    gap: 10px;
+    right: 0;
+    top: -15px;
+
+    i {
+      width: 32px;
+      height: 32px;
+      cursor: pointer;
+      fill: $color-khaki;
+      transition: fill 150ms ease-in;
+
+      &:hover {
+        fill: $color-blue;
+      }
+
+      &:active {
+        fill: $color-light-blue;
+      }
+
+      &:last-of-type {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  .carousel-cell {
+    min-height: 315px;
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+    width: calc(33.333% - 13.3px);
+    background: $color-white;
+    border-radius: 16px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      border: 1px solid $color-light-bg;
+      border-radius: 16px;
+    }
+  }
+
+  .header {
+    display: flex;
+    align-items: center;
+    padding: 13px 21px 13px 45px;
+    min-height: 70px;
+    position: relative;
+    color: $color-white;
+    background-color: $color-blue;
+    border-radius: 10px;
+
+    i {
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      left: 21px;
+      top: 8px;
+    }
+  }
+
+  .body {
+    margin-bottom: 14px;
+    padding: 14px 21px 0 21px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+  }
+
+  .footer {
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    color: $color-gray;
+  }
+
+  .flickity-page-dots {
+    display: none;
+  }
+
+  @include respond(medium) {
+
+    .carousel-cell {
+      width: calc(50% - 10px);
+    }
+
+    .flickity-page-dots {
+      display: block;
+    }
+  }
+
+  @include respond(small) {
+
+    .buttonSlider {
+      display: none;
+    }
+
+    .carousel-cell {
+      width: 100%;
+    }
+  }
+}

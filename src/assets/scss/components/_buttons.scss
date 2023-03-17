@@ -1,0 +1,47 @@
+//------------------------------------------------------------------------------
+// Buttons
+//------------------------------------------------------------------------------
+
+.btn {
+  border-radius: 10px;
+  user-select: none;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-tap-highlight-color: transparent;
+  transition: all .25s ease-in-out;
+  cursor: pointer;
+
+
+  &:active {
+    transition: all .1s ease-in-out;
+  }
+
+  &-primary {
+    height: 54px;
+    padding: 17px 36px;
+
+    @include btnCondition(prim);
+
+    &:hover {
+      @include btnCondition(ter);
+    }
+
+    &:active {
+      @include btnCondition(prim);
+    }
+  }
+
+  &-secondary {
+    height: 48px;
+    padding: 14px 30px;
+
+    @include btnCondition(sec);
+
+    &:hover {
+      @include btnCondition(prim);
+    }
+
+    &:active {
+      @include btnCondition(ter);
+    }
+  }
+}

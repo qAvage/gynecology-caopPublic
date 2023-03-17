@@ -1,0 +1,357 @@
+//------------------------------------------------------------------------------
+// Hero
+//------------------------------------------------------------------------------
+
+
+
+#hero {
+  
+  .inner {
+    min-height: 460px;
+    position: relative;
+
+    .bg-blur {
+      right: 350px;
+      bottom: -70px;
+    }
+
+    .title {
+
+      .ui-title-icon {
+        margin: 40px 0 10px;
+      }
+
+      h1 {
+        padding-bottom: 15px;
+      }
+
+      span {
+        color: $color-blue;
+      }
+
+      p {
+        padding-bottom: 30px;
+        max-width: 380px;
+
+        &:last-of-type span {
+          font-weight: 700;
+        }
+      }
+
+      & > div {
+        display: flex;
+        align-items: center;
+        gap: 63px;
+        
+        .sale {
+          position: relative;
+
+          i {
+
+            &:first-of-type {
+              width: 40px;
+              height: 40px;
+            }
+
+            &:last-of-type {
+              width: 86px;
+              height: 86px;
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              fill: red;
+              animation-name: spin;
+              animation-iteration-count: infinite;
+              animation-timing-function: linear;
+              animation-duration: 4500ms;
+
+              @keyframes spin { 
+                from {
+                  transform: translate(-50%, -50%) rotate(0deg); 
+                } to {
+                  transform: translate(-50%, -50%) rotate(360deg); 
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .image {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      right: 0;
+      background-image: url('@/assets/img/hero.png');
+      background-repeat: no-repeat;
+      background-position: top right;
+      mask-image: url(@/assets/img/clip.svg);
+      mask-repeat: no-repeat;
+      mask-position: top right;
+      z-index: -1;
+    }
+  }
+
+  @include respond(medium) {
+
+    .inner {
+
+      .image {
+        margin-top: 100px;
+        height: 500px;
+        position: static;
+        background-position: center 30%;
+        background-size: cover;
+        border-radius: 16px;
+        mask: none;
+      }
+    }
+  }
+
+  @include respond(medium-sm) {
+
+    .inner {
+
+      .image {
+        height: 460px;
+      }
+    }
+  }
+
+  @include respond(small) {
+
+    .inner {
+
+      .bg-blur {
+        right: auto;
+        bottom: 35%;
+        left: -50px;
+      }
+
+      .image {
+        height: 350px;
+      }
+    }
+  }
+
+  @include respond(small-sm) {
+
+    .inner {
+
+      .title {
+
+        & > div {
+          justify-content: space-between;
+          gap: 0;
+
+          .sale {
+            margin-right: 25px;
+
+            i {
+
+              &:first-of-type {
+                width: 40px;
+                height: 40px;
+              }
+  
+              &:last-of-type {
+                width: 86px;
+                height: 86px;
+              }
+            }
+          }
+        }
+      }
+
+      .image {
+        height: 300px;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 380px) {
+    .inner {
+
+      .title {
+
+        & > div {
+
+          button {
+            padding: 17px 25px;
+          }
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: 350px) {
+    .inner {
+
+      .title {
+
+        & > div {
+
+          button {
+            padding: 17px 10px;
+          }
+
+          .sale {
+            margin-right: 19px;
+
+            i {
+
+              &:first-of-type {
+                width: 30px;
+                height: 30px;
+              }
+  
+              &:last-of-type {
+                width: 60px;
+                height: 60px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Tooltips 
+
+
+
+#tooltip {
+
+  &0 {
+    top: 40px;
+    left: 45%;
+  }
+
+  &1 {
+    top: 280px;
+    right: -30px;
+  }
+
+  &2 {
+    top: 325px;
+    right: 370px;
+  }
+
+  @include respond(medium) {
+
+    &0 {
+      top: auto;
+      left: auto;
+      transform: translateY(-320px);
+    }
+
+    &1 {
+      top: auto;
+      right: auto;
+      left: 20px;
+      transform: translateY(-210px);
+    }
+
+    &2 {
+      top: auto;
+      right: 10%;
+      transform: translateY(-20px);
+    }
+  }
+}
+
+.tooltip {
+  padding: 8px 14px;
+  position: absolute;
+  overflow: hidden;
+  background-color: $color-white;
+  border: 1px solid $color-light-bg;
+  border-radius: 20px;
+  transition: all 1s;
+  z-index: 34;
+  transition: border-radius 0.6s ease-in-out;
+  box-shadow: $shadow-primary;
+  cursor: pointer;
+  text-align: right;
+
+  .bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+  }
+
+  .head {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 6px;
+    
+    i {
+      width: 24px;
+      height: 24px;
+      fill: $color-light-blue;
+      transition: transform 0.6s ease-in-out, fill 0.6s ease-in-out;
+    }
+  }
+
+  .body {
+    line-height: 20px;
+    transition: all .6s ease-in-out;
+    color: $color-gray;
+    
+    p {
+      margin-left: auto;
+      padding-right: 30px;
+      width: 210px;
+    }
+  }
+
+  .fade-enter-active,
+  .fade-leave-active {
+    will-change: height, opacity, width;
+    transition: height .5s ease, opacity .4s ease-in-out, width .6s ease-in-out;
+  }
+
+  .fade-enter-from,
+  .fade-leave-to {
+    height: 0 !important;
+    opacity: 0;
+  }
+
+  &:hover {
+    border-radius: 10px;
+
+    i {
+      fill: $color-blue;
+      transform: rotate(45deg);
+    }
+  }
+
+  &.on-left {
+    text-align: left;
+
+    .head {
+      justify-content: flex-start;
+
+      i {
+        order: -1;
+      }
+    }
+
+    .body {
+      
+      p {
+        margin-right: auto;
+        padding-left: 30px;
+      }
+    }
+  }
+}

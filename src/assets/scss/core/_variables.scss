@@ -1,0 +1,52 @@
+//------------------------------------------------------------------------------
+//  Variables
+//------------------------------------------------------------------------------
+
+
+
+// Breakpoints
+
+$bp-small-sm-ex: 300px;
+$bp-small-sm-md: 360px;
+$bp-small-sm: 500px;
+$bp-small: 600px;
+$bp-small-lg: 700px;
+$bp-medium-sm: 800px;
+$bp-medium-md: 900px;
+$bp-medium: 960px;
+$bp-large: 1200px;
+
+
+
+// Layout
+
+$container-width: 1180px;
+
+
+
+// Font
+
+$font-primary: 'Open Sans', sans-serif;
+
+
+
+// Colors
+
+$color-black: #0C1431;
+$color-white: #fff;
+$color-gray: #77787E;
+$color-blue: #3452CD;
+$color-light-blue: #849ADF;
+$color-khaki: #C5DAE7;
+$color-dark-bg: #D5DCEC;
+$color-light-bg: #EEF2FC;
+$color-rad: #DF335C;
+
+
+
+// Shadows
+
+$shadow-primary:
+  0px 33px 80px rgba(33, 30, 30, 0.07),
+  0px 7.5px 18px rgba(33, 30, 30, 0.04),
+  0px 2px 5.5px rgba(33, 30, 30, 0.03);

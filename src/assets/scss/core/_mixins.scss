@@ -1,0 +1,52 @@
+// Mixins
+
+@mixin btnCondition($kind) {
+    @if $kind == prim {
+      color: $color-white;
+      background-color: $color-blue;
+    }
+    @if $kind == sec {
+      color: $color-blue;
+      background-color: $color-light-bg;
+    }
+    @if $kind == ter {
+      color: $color-white;
+      background-color: $color-light-blue;
+    }
+  }
+
+// MEDIA QUERY MANAGER
+
+// $bp-small: 600px;
+// $bp-medium: 960px;
+// $bp-large: 1216px;
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == small-sm-ex {
+      @media only screen and (max-width: $bp-small-sm-ex) { @content };
+  }
+  @if $breakpoint == small-sm-md {
+      @media only screen and (max-width: $bp-small-sm-md) { @content };
+  }
+  @if $breakpoint == small-sm {
+      @media only screen and (max-width: $bp-small-sm) { @content };
+  }
+  @if $breakpoint == small {
+      @media only screen and (max-width: $bp-small) { @content };
+  }
+  @if $breakpoint == small-lg {
+      @media only screen and (max-width: $bp-small-lg) { @content };
+  }
+  @if $breakpoint == medium-sm {
+      @media only screen and (max-width: $bp-medium-sm) { @content };
+  }
+  @if $breakpoint == medium-md {
+      @media only screen and (max-width: $bp-medium-md) { @content };
+  }
+  @if $breakpoint == medium {
+      @media only screen and (max-width: $bp-medium) { @content };
+  }
+  @if $breakpoint == large {
+      @media only screen and (max-width: $bp-large) { @content };
+  }
+}

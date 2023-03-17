@@ -1,0 +1,140 @@
+//------------------------------------------------------------------------------
+// Feedback
+//------------------------------------------------------------------------------
+
+
+
+#feedback {
+
+  & > div {
+    padding: 50px 0;
+    background-color: $color-light-bg;
+  }
+
+  .wrapper {
+    display: flex;
+    position: relative;
+
+    .bg-blur {
+      z-index: 0;
+
+      &:first-of-type {
+        top: 0;
+        left: 30%;
+      }
+
+      &:last-of-type {
+        bottom: -50px;
+        left: -230px;
+      }
+    }
+  }
+
+  .calendar, .content {
+    width: 50%;
+  }
+
+  .icon {
+    width: 82%;
+    position: relative;
+
+    &::after {
+      content: "";
+      padding-top: 88%;
+      display: block;
+    }
+  }
+
+  .icon-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    padding: 40px 50px 50px 40px;
+    background-color: $color-white;
+    border-radius: 20px;
+    box-shadow: $shadow-primary;
+  }
+
+  .calendar {
+    align-self: center;
+  }
+
+  .content {
+    padding: 20px 0;
+
+    .title {
+      max-width: 400px;
+
+      & > p {
+        padding-top: 16px;
+  
+        span {
+          color: $color-blue;
+          font-weight: 700;
+        }
+      }
+    }
+  }
+
+  @include respond(large) {
+
+    .icon-wrapper {
+      padding: 30px;
+    }
+  }
+
+  @include respond(medium-sm) {
+
+    .wrapper {
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .calendar, .content {
+      width: 100%;
+    }
+
+    .calendar {
+      padding-top: 30px;
+      order: 1;
+    }
+
+    .icon {
+      margin: 0 auto;
+      width: 100%;
+      max-width: 400px;
+    }
+  }
+
+  @include respond(small) {
+
+    .wrapper {
+
+      .bg-blur {
+  
+        &:first-of-type {
+          top: 0;
+          left: -50px;
+        }
+  
+        &:last-of-type {
+          right: 0;
+          bottom: 35%;
+          left: auto;
+        }
+      }
+    }
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .title {
+        text-align: center;
+      }
+    }
+  }
+}

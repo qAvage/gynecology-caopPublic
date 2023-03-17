@@ -1,0 +1,161 @@
+#about {
+
+
+
+// Content
+
+  .content {
+    display: flex;
+  }
+
+  .description {
+    padding-right: 20px;
+    width: 33.3%;
+    
+    .wrap {
+      position: sticky;
+      top: 150px;
+
+      h2 {
+        padding-top: 14px;
+      }
+
+      p {
+        padding-top: 20px;
+      }
+    }
+  }
+
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+    width: 66.6%;
+    text-align: center;
+
+    .card-item {
+      position: relative;
+      margin-top: 30px;
+      padding: 70px 30px 18px;
+      width: calc(50% - 10px);
+      background-color: $color-white;
+      border-radius: 12px;
+      box-shadow: $shadow-primary;
+
+      &:nth-child(odd) {
+        margin-right: 20px;
+      }
+
+      &:not(:nth-last-child(-n+2)) {
+        margin-bottom: 20px;
+      }
+
+      h3 {
+        padding-bottom: 14px;
+      }
+    }
+
+
+    i {
+      position: absolute;
+      top: 0;
+      right: 50%;
+      transform: translate(50%, -30px);
+      width: 80px;
+      height: 80px;
+    }
+  }
+
+  @include respond(medium-md) {
+
+    .description {
+      width: 50%;
+
+      .wrap {
+        top: 20px;
+      }
+    }
+
+    .cards {
+      width: 50%;
+
+      .card-item {
+        width: 100%;
+
+        &:nth-child(odd) {
+          margin-right: 0;
+        }
+
+        &:not(:last-child) {
+          margin-bottom: 30px;
+        }
+      }
+    }
+  }
+
+  @include respond(small) {
+
+    .content {
+      flex-direction: column;
+    }
+
+    .description, .cards {
+      padding-right: 0;
+      width: 100%;
+    }
+
+    .cards {
+      justify-content: center;
+      padding-top: 40px;
+
+      .card-item {
+        max-width: 400px;
+      }
+    }
+  }
+
+  
+
+  // Counter
+  
+  .counter {
+    display: flex;
+    margin-top: 100px;
+    text-align: center;
+    border-radius: 16px;
+    box-shadow: $shadow-primary;
+
+    .count {
+      padding: 27px 20px;
+    }
+
+    span {
+      display: block;
+      padding: 15px 0;
+      color: $color-blue;
+      font-size: 36px;
+      font-weight: 800;
+    }
+
+    p {
+      margin: 0 auto;
+      max-width: 240px;
+    }
+
+    @include respond(medium-sm) {
+      flex-wrap: wrap;
+
+      .count {
+        width: 50%;
+      }
+    }
+
+    @include respond(small) {
+      margin: 60px auto 0;
+      max-width: 400px;
+
+      .count {
+        width: 100%;
+      }
+    }
+  }
+}
